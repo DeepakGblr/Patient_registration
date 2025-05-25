@@ -47,6 +47,10 @@ patient-registration-app/
 - ✅ **Fully Responsive**  
   Clean UI centered with a card layout and accessible colors.
 
+  ✅Support usage across multiple tabs (in the same browser) and make sure writes and reads are synchronized.
+
+  ✅BroadcastChannel API — it lets different tabs/windows communicate in real-time.
+
 ---
 
 ## 🧠 Component Overview
@@ -96,6 +100,9 @@ bash
 npm run dev
 The app will open at http://localhost:5173/.
 
+
+### 2 . Vercel deployment url : patient-registration-pcn0o3lh9-deepak-gs-projects-ccd8fcfd.vercel.app
+
 🗃️ Sample SQL Queries
 sql
 
@@ -104,8 +111,35 @@ SELECT * FROM patients;
 
 -- Find patients over 50
 SELECT * FROM patients WHERE age > 50;
+
+
+
+## 🛠️ Challenges Faced
+
+During development and deployment of the Patient Registration App, several challenges was faced;
+
+1. **Styling and Layout**  
+   - Centering content responsively using Flexbox.  
+   - Choosing background colors for readability, especially for SQL query results on dark themes.
+
+2. **SQL Query Results Display**  
+   - Custom styling to ensure query results are clear and visible on dark backgrounds.
+
+3. **Data Persistence and Synchronization**  
+   - Persisting patient data across page refreshes using PGlite with IndexedDB.  
+   - Synchronizing data and UI state across multiple browser tabs via the BroadcastChannel API.
+
+4. **Vercel Deployment**  
+   - Configuring correct build output directory for Vite (`dist`).  
+   - Adding rewrite rules to avoid 404 errors on SPA page refreshes.
+
+5. **React Component Management**  
+   - Ensuring proper props and state handling between components for smooth UI updates.  
+   - Resolving JSX syntax errors to maintain successful builds.
+
+---
+
 📌 Notes
-All data is stored in-memory and resets on refresh.
 
 Ideal for testing UI behavior without backend.
 
